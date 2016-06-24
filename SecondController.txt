@@ -1,0 +1,23 @@
+import UIKit
+
+class SecondViewController: UIView Controller {
+@IBOutlet var task:UITextField!
+@IBAction func addTask(sender:AnyObject){
+toDoList.append(task.text)
+task.text=""
+NSUserDefaults.standardUserDefaults().setObject(toDoList, forKey:"arr")
+}
+
+override func touchesBegan(touches: Set<NSObject> withEvent event: UIEvent)
+{
+self.view.endEditing(true)
+}
+
+override func viewDidLoad(){
+super.viewDidLoad()
+}
+
+override func didReceiveMemoryWarning() {
+super.didReceiveMemoryWarning()
+}
+}
